@@ -1,0 +1,32 @@
+# 该文件默认线上配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server.tomcat:
+  remote-ip-header:       X-Forwarded-For
+  protocol-header:        X-Forwarded-Proto
+  #internal-proxies:       120\\.26\\.140\\.95|\\
+  # 10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 192\\.168\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 169\\.254\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 172\\.1[6-9]{1}\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 172\\.2[0-9]{1}\\.\\d{1,3}\\.\\d{1,3}|\\
+  # 172\\.3[0-1]{1}\\.\\d{1,3}\\.\\d{1,3}
+  uri-encoding:           UTF-8
+
+spring.aop.proxy-target-class: true
+# JacksonProperties
+spring.jackson:
+  default-property-inclusion: non_absent
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/demo
+    password: 123456
